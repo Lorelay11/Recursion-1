@@ -1,0 +1,34 @@
+
+We have a number of bunnies and each bunny has two big floppy ears. We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
+
+
+bunnyEars(0) → 0
+bunnyEars(1) → 2
+bunnyEars(2) → 4
+
+
+public int bunnyEars(int bunnies) {
+if (bunnies == 0){ 
+return 0;}
+else{
+return 2 + bunnyEars(bunnies-1);
+}
+}
+
+explanation 
+
+basically you're calling a function that calls itself with a lower argument. Walk it through with, say, 5 bunnies..
+
+bunnyEars(5) = 2 + bunnyEars(4)
+
+= 2 + 2 + bunnyEars(3)
+
+= 2 + 2 + 2 + bunnyEars(2)
+
+= 2 + 2 + 2 + 2 + bunnyEars(1)
+
+= 2 + 2 + 2 + 2 + 2 + bunnyEars(0) // This is the special if case)
+
+= 2 + 2 + 2 + 2 + 2 + 0
+
+= 10
